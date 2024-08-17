@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header_menu">
+            <img class="header_menu_imagen" src="img/logo_blanco.png" alt="Logo">
+            <a class="header_menu_link" href="index.html">Encriptador</a>
+            <!--<a class="header_menu_link" href="real-time.html">Encriptador En Tiempo Real</a>-->
+        </nav>
+    </header>
+
+    <main class="traductor">
+        <section class="traductor_presentacion">
+            <textarea class="cuadro_de_texto_introducir" placeholder="Ingrese el texto aquí"></textarea>
+            <div class="mensaje_indicativo">
+                <img src="img/bi_exclamation-circle-fill-1.png" class="icono" alt="Indicativo">
+                <h2 class="texto_indicativo">Solo letras minúsculas y sin acentos</h2>
+            </div>
+            <div class="botones">
+                <button id="boton_encriptar">Encriptar</button>
+                <button id="boton_desencriptar">Desencriptar</button>
+            </div>
+        </section>
+        <section class="traductor_presentacion_resultado_var">
+            <div class="resultado"></div>
+            <button id="boton_copiar">Copiar</button>
+        </section>
+        <section class="traductor_presentacion_resultado">
+            <img class="vector" src="img/muñeco1.png" alt="Muñeco">
+            <h2 class="texto_salida">Ningún mensaje fue encontrado</h2>
+            <h2 class="subtitulo_salida">Ingresa el texto que desees encriptar o desencriptar.</h2>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Desarrollado por Kaleth :D</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
