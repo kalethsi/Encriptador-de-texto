@@ -13,9 +13,38 @@
         <nav class="header_menu">
             <img class="header_menu_imagen" src="img/logo_blanco.png" alt="Logo">
             <a class="header_menu_link" href="index.html">Encriptador</a>
-            <a class="header_menu_link" href="real-time.html">Encriptador en tiempo real</a>
+            <a class="header_menu_link" href="real-time.html">Encriptador En Tiempo Real</a>
         </nav>
     </header>
+
+    <main class="traductor">
+        <div class="container">
+            <div class="input-container">
+                <div class="input-text">
+                    <h2 class="encabezado-input">Texto</h2>
+                    <textarea class="input-text" placeholder="Escribe aquí..."></textarea>
+                </div>
+                <button class="close-button" id="quitar-button"><img class="imgen_boton" src="img/Recurso 1.png"></button>
+            </div>
+            <div class="output-container">
+                <button class="boton-intercambiar" id="boton-intercambiar"><img class="imgen_boton" src="img/Flechas.png"></button>
+                <div class="output-text">
+                    <h2 class="encabezado-input">Encriptado</h2>
+                    <textarea id="outputText" class="output-text" placeholder="Texto encriptado aquí..." readonly></textarea>
+                </div>
+                <button class="copiar-button" id="copiar-button"><img class="imgen_boton" src="img/copiar.png"></button>
+                <div id="tooltip" class="tooltip">Contenido copiado</div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+        <p>Desarrollado por Kaleth :D</p>
+    </footer>
+
+
+    <script src="app1.js"></script>
 </body>
 
 </html>

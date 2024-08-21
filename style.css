@@ -3,7 +3,7 @@
 :root {
     --color-primario: #5D5D81;
     --color-encabezado: #3B3355;
-    --color-letras-encabezado: #BFCDE0;
+    --color-letras-encabezado: #f6f6f6;
     --color-letras-encabezado-hover: #a4b0c0;
     --color-cuadro-de-texto: #BFCDE0;
     --color-boton-encriptar: #3B3355;
@@ -96,7 +96,7 @@ body {
 .texto_indicativo {
     font-family: var(--fuente-inter);
     font-size: 0.75rem; /* 12px */
-    color: #BFCDE0;
+    color: white;
 }
 
 .cuadro_de_texto_introducir {
@@ -229,7 +229,7 @@ body {
 
 .texto_salida {
     font-size: 1.5rem; /* 24px */
-    color: #BFCDE0;
+    color: white;
     margin-bottom: 1rem; /* 16px */
     text-align: center;
     font-family: 'Inter', sans-serif;
@@ -237,7 +237,7 @@ body {
 
 .subtitulo_salida {
     font-size: 1rem; /* 16px */
-    color: #BFCDE0;
+    color: white;
     text-align: center; /* Centra el subtítulo */
     font-family: 'Inter', sans-serif;
 }

@@ -4,8 +4,8 @@
     --color-primario: #5D5D81;
     --color-encabezado: #3B3355;
     --color-letras-encabezado: #ffffff;
-    --color-letras-encabezado-hover: #041a35;
-    --color-cuadro-de-texto: #0A3871;
+    --color-letras-encabezado-hover: #a4b0c0;
+    --color-cuadro-de-texto: #f6f6f6;
     --color-boton-encriptar: #0A3871;
     --color-boton-desencriptar: #ffffff;
     --color-boton-hover-1: #06264d;
@@ -18,8 +18,18 @@
 }
 
 * {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+main{
+    flex: 1;
 }
 
 body {
@@ -48,4 +58,260 @@ body {
     color: var(--color-letras-encabezado);
     text-decoration: none;
     transition: color 0.3s ease, color 0.3s ease;
+}
+.header_menu_link:hover{
+    color: var(--color-letras-encabezado-hover);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 500px; /* Asegura que los textareas ocupen una altura considerable */
+    background-color: none;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 2%;
+    box-sizing: border-box; /* Incluye el padding dentro del tamaño total */
+}
+
+.input-text::placeholder,
+.output-text::placeholder {
+    color: var(--color-cuadro-de-texto);
+    opacity: 1; /* Asegura que el color sea opaco y no desvanecido */
+}
+
+.encabezado-input{
+    width: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    /*Letra*/
+    font-size: 1.5rem;
+    
+}
+
+.input-container {
+    background-color: #7979a7;
+    width: 50%;
+    border: none;
+    padding: 20px;
+    resize: none;
+    height: 95%; /* Ajusta según sea necesario */
+    min-height: 100%;
+    max-height: 95%; /* Evita que crezca más de lo establecido */
+    outline: none;
+    border-radius: 20px 0 0 20px;
+    border-right: 1px solid var(--color-primario); /* Línea de separación */
+    box-sizing: border-box; /* Asegura que padding no sobrepase el tamaño */
+
+    display: flex;
+    flex-direction: row;
+    /*Letra*/
+    font-size: 2rem;
+    font-family: var(--fuente-inter);
+    color: var(--color-cuadro-de-texto);
+}
+.input-text {
+    background-color: #7979a7;
+    width: 95%;
+    border: none;
+    padding: 2%;
+    resize: none;
+    height: 98%; /* Ajusta según sea necesario */
+    min-height: 50%;
+    max-height: 98%; /* Evita que crezca más de lo establecido */
+    outline: none;
+    box-sizing: border-box; /* Asegura que padding no sobrepase el tamaño */
+    /*Letra*/
+    font-size: 2rem;
+    font-family: var(--fuente-inter);
+    color: var(--color-cuadro-de-texto);
+}
+.close-button{
+    background-color: transparent;
+    top: 4%;
+    width: 5%;
+    height: 20px;
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: visibility 0s, opacity 0.5s ease-in-out; /* Transición de 0.5 segundos para la opacidad */
+    visibility: hidden;
+    opacity: 0;
+}
+
+.boton-intercambiar{
+    background-color: transparent;
+    top: 4%;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.output-container {
+    background-color: #7979a7;
+    width: 50%;
+    border: none;
+    padding: 20px;
+    resize: none;
+    height: 95%; /* Ajusta según sea necesario */
+    min-height: 100%;
+    max-height: 100%; /* Evita que crezca más de lo establecido */
+    outline: none;
+    border-radius: 0 20px 20px 0;
+    border-right: 1px solid var(--color-primario); /* Línea de separación */
+    box-sizing: border-box; /* Asegura que padding no sobrepase el tamaño */
+
+    display: flex;
+    flex-direction: row;
+    /*Letra*/
+    font-size: 2rem;
+    font-family: var(--fuente-inter);
+    color: var(--color-cuadro-de-texto);
+}
+.output-text {    
+    background-color: #7979a7;
+    width: 95%;
+    border: none;
+    padding: 2%;
+    resize: none;
+    height: 98%; /* Ajusta según sea necesario */
+    min-height: 58%;
+    max-height: 98%; /* Evita que crezca más de lo establecido */
+    outline: none;
+    box-sizing: border-box; /* Asegura que padding no sobrepase el tamaño */
+    /*Letra*/
+    font-size: 2rem;
+    font-family: var(--fuente-inter);
+    color: var(--color-cuadro-de-texto);
+}
+.copiar-button{
+    background-color: transparent;
+    top: 4%;
+    width: 5%;
+    height: 20px;
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+}
+/* Estilos para el tooltip */
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    visibility: hidden; /* Ocultar por defecto */
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s; /* Transición suave */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+
+.footer {
+    background-color: var(--color-footer);
+    padding: 1.5625rem; /* 25px */
+    color: var(--color-cuadro-de-texto);
+    text-align: center;
+    font-family: var(--fuente-pie-de-pagina);
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+/* Media Query para pantallas menores a 768px */
+@media (max-width: 768px) {
+    .header {
+        width: 100%;
+        padding: 1rem; /* Reducir el padding en pantallas pequeñas */
+    }
+
+    .header_menu {
+        flex-direction: column;
+        gap: 2rem; /* Reducir el gap en pantallas pequeñas */
+    }
+
+    .header_menu_link {
+        font-size: 1.2rem; /* Reducir el tamaño de la fuente en pantallas pequeñas */
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto; /* Permitir que la altura se ajuste automáticamente */
+    }
+
+    .input-container, .output-container {
+        width: 100%;
+        border-radius: 8px; /* Ajustar el radio de borde */
+        border-right: none; /* Eliminar la línea de separación */
+    }
+
+    .input-text, .output-text {
+        width: 100%;
+        font-size: 1.5rem; /* Reducir el tamaño de la fuente en pantallas pequeñas */
+    }
+
+    .close-button, .copiar-button {
+        width: 8%; /* Ajustar el tamaño del botón */
+        height: 25px; /* Ajustar el tamaño del botón */
+    }
+
+    .boton-intercambiar {
+        width: 25px; /* Ajustar el tamaño del botón */
+        height: 25px; /* Ajustar el tamaño del botón */
+    }
+
+    .tooltip {
+        font-size: 0.75rem; /* Reducir el tamaño de la fuente en pantallas pequeñas */
+    }
+
+    .footer {
+        font-size: 1.5rem; /* Reducir el tamaño de la fuente en pantallas pequeñas */
+    }
+}
+
+/* Media Query para pantallas menores a 480px */
+@media (max-width: 480px) {
+    .header {
+        padding: 0.5rem; /* Reducir aún más el padding en pantallas muy pequeñas */
+    }
+
+    .header_menu_link {
+        font-size: 1rem; /* Reducir aún más el tamaño de la fuente en pantallas muy pequeñas */
+    }
+
+    .input-text, .output-text {
+        font-size: 1.2rem; /* Reducir el tamaño de la fuente en pantallas muy pequeñas */
+    }
+
+    .close-button, .copiar-button {
+        width: 10%; /* Ajustar el tamaño del botón */
+        height: 30px; /* Ajustar el tamaño del botón */
+    }
+
+    .boton-intercambiar {
+        width: 30px; /* Ajustar el tamaño del botón */
+        height: 30px; /* Ajustar el tamaño del botón */
+    }
+
+    .tooltip {
+        font-size: 0.625rem; /* Reducir el tamaño de la fuente en pantallas muy pequeñas */
+    }
+
+    .footer {
+        font-size: 1.25rem; /* Reducir el tamaño de la fuente en pantallas muy pequeñas */
+    }
 }
